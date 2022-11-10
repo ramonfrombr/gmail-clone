@@ -14,11 +14,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import DuoIcon from '@mui/icons-material/Duo';
 import PhoneIcon from '@mui/icons-material/Phone';
 
-
-
-
 import SidebarOption from './SidebarOption';
-
 
 function Sidebar() {
     return (
@@ -40,11 +36,9 @@ function Sidebar() {
                     <IconButton>
                         <PersonIcon />
                     </IconButton>
-
                     <IconButton>
                         <DuoIcon />
                     </IconButton>
-
                     <IconButton>
                         <PhoneIcon />
                     </IconButton>
