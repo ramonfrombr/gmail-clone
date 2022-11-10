@@ -5,6 +5,10 @@ import Sidebar from '../components/Sidebar';
 import { Outlet, Link, useLoaderData, Form, redirect } from 'react-router-dom';
 import { getContacts, createContact } from '../contacts';
 import '../App.css';
+import SendMail from '../components/SendMail';
+
+import {useSelector} from 'react-redux';
+import { selectSendMessageIsOpen } from '../app/mailSlice';
 
 
 export async function action() {
@@ -22,6 +26,8 @@ const Root = () => {
     const {contacts} = useLoaderData();
     console.log(contacts);
 
+    const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
+
     return (
         <App>
             <Header />
@@ -29,7 +35,9 @@ const Root = () => {
             <AppBody>
                 <Sidebar />
                 <Outlet />
-            </AppBody> 
+            </AppBody>
+
+            {sendMessageIsOpen && <SendMail />}
         </App>
     )
 }
